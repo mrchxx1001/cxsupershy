@@ -29,7 +29,7 @@ h1 {
 /* h2 간격 조정 */
 h2 {
     font-size: 24px;
-    font-weight: normal;
+    font-weight: 500;
     color: #ffff;
     text-align: center;
     margin-top: 70px; /* h1과의 간격을 100px로 설정 */

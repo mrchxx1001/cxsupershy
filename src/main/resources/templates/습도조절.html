@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>습도 조절</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 기본 레이아웃 스타일 */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* 세로로 배치, 상단에 배치 */
+      align-items: flex-start; /* 가로 좌표 맞춤 */
+      height: 100vh;
+      margin: 0;
+      background-color: #1e1e1e;
+      color: white;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 0px; /* 타이틀과 서브타이틀 간격 */
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #thermometer {
+      width: 250px;
+      height: 300px;
+      position: absolute;
+      left: 630px; /* 이미지의 x 좌표 */
+      top: 180px; /* 이미지의 y 좌표 */
+    }
+
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      left: 780px; /* 슬라이더의 x 좌표 */
+      top: 350px; /* 슬라이더의 y 좌표 */
+    }
+
+    .slider {
+      -webkit-appearance: none; /* 기본 스타일 제거 */
+      appearance: none;
+      width: 300px; /* 슬라이더 높이 */
+      height: 10px; /* 슬라이더 폭 */
+      background-color: #333;
+      border-radius: 5px;
+      outline: none;
+      margin-bottom: 20px;
+      transform: rotate(-90deg); /* 슬라이더를 90도 회전시켜 세로로 움직이도록 설정 */
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: #d32f2f; /* 슬라이더 손잡이 색상 */
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background-color: #d32f2f; /* 슬라이더 손잡이 색상 */
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .slider::-ms-thumb {
+      width: 20px;
+      height: 20px;
+      background-color: #d32f2f; /* 슬라이더 손잡이 색상 */
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #humidity {
+      font-size: 48px;
+      position: absolute;
+      left: 720px; /* 습도의 x 좌표 */
+      top: 470px; /* 습도의 y 좌표 */
+      font-weight: bold;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-top: 40px;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .progress-bar {
+      width: 800px;
+      margin: 40px 0;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>습도를 조정해주세요</h1>
+  <h2>프로필에 접속하면 자동으로 내가 설정한 습도로 조정돼요</h2>
+
+  <img src="material-symbols_humidity-mid.png" id="thermometer" alt="Thermometer Icon">
+    
+  <div class="slider-container">
+    <input type="range" min="10" max="90" value="50" class="slider" id="humiditySlider">
+  </div>
+
+  <div id="humidity">50%</div>
+
+  <div class="button-container">
+    <button id="prevBtn">이전</button>
+    <button id="nextBtn">다음</button>
+  </div>
+
+  <div class="progress-bar">
+    <div style="width: 80%; height: 100%; background-color: #d32f2f; border-radius: 20px;"></div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('humiditySlider');
+    const humidityDisplay = document.getElementById('humidity');
+
+    // 초기 값 설정
+    let humidity = 50;
+    updateHumidity(humidity);
+
+    // 슬라이더 조작 시 습도 업데이트
+    slider.addEventListener('input', (e) => {
+      humidity = e.target.value;
+      updateHumidity(humidity);
+    });
+
+    // 키보드 방향키로 습도 조절
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp' && humidity < 90) {
+        humidity++;
+        updateHumidity(humidity);
+      } else if (e.key === 'ArrowDown' && humidity > 10) {
+        humidity--;
+        updateHumidity(humidity);
+      }
+    });
+
+    // 습도 업데이트 함수
+    function updateHumidity(hum) {
+      humidityDisplay.textContent = `${hum}%`;
+      slider.value = hum;
+    }
+  </script>
+
+</body>
+</html>
