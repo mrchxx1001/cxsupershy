@@ -2,6 +2,7 @@ package com.project.cxsupershy.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.util.Date;
@@ -9,6 +10,8 @@ import java.util.Date;
 @Entity
 @Table(name = "rescue_request")
 public class RescueRequest {
+
+    @Id
     @Column(name = "rescue_id")
     private String rescueId;
     @Column(name = "user_id")

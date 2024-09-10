@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/main/resources/templates/styles.css
 /* Light 폰트 불러오기 */
 @font-face {
     font-family: 'LGElText';
@@ -30,7 +31,16 @@
     font-style: normal; /* bold 대신 normal 사용 */
 }
 
+=======
+/* Google Fonts에서 Roboto 폰트 불러오기 */
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+>>>>>>> b9cf43e7ea5da4fe9ce3b4b2ec5d7e833dea3e86:src/main/resources/static/css/styles.css
 /* 기본적인 공통 폰트와 색상 설정 */
+@font-face {
+            font-family: 'LGEIText';
+            src: url("../font/LGEITextTTF-Bold.ttf") format('truetype'); /* 폰트 파일 경로 */
+        }
+
 body {
     font-family: 'LGElText', sans-serif; /* LGElText 폰트 적용 */
     background-color: #1E1E1E;
