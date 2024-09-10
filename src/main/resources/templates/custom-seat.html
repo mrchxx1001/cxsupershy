@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시트 조절</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    
+    #seat {
+      width: 200px; /* 시트 이미지 크기 줄임 */
+      height: auto;
+      position: absolute;
+      left: 50%; /* 시트를 화면의 절대 중앙에 배치 */
+      transform: translateX(-50%); /* 시트를 정확히 중앙으로 */
+      top: 450px; /* 시트 이미지의 y 좌표 */
+    }
+
+    #backrest {
+      width: auto;
+      height: 280px; /* 등받이 이미지 크기 줄임 */
+      position: absolute;
+      left: 42%; /* 등받이도 시트와 맞추어 중앙 배치 */
+      transform: translateX(-50%);
+      top: 200px; /* 등받이 이미지의 y 좌표 */
+      transform-origin: bottom;
+    }
+
+   
+
+  </style>
+</head>
+<body>
+
+  <h1>시트를 조정해주세요</h1>
+  <h2>프로필에 접속하면 자동으로 내가 설정한 시트 위치로 조정돼요</h2>
+
+  <img src="image/backrest.png" id="backrest" alt="등받이">
+  <img src="image/seat.png" id="seat" alt="시트">
+    
+  <div class="button-container">
+    <button id="prevBtn">이전</button>
+    <button id="nextBtn">다음</button>
+  </div>
+
+  <div class="progress-bar">
+    <div style="width: 60%; height: 100%; background-color: #d32f2f; border-radius: 20px;"></div>
+  </div>
+
+  <script>
+    const seat = document.getElementById('seat');
+    const backrest = document.getElementById('backrest');
+
+    let seatPositionX = 50; // 시트의 초기 좌우 위치 (%로 중앙 배치)
+    let backrestAngle = 0; // 등받이의 초기 각도
+
+    // 키보드 입력으로 시트와 등받이 조정
+    document.addEventListener('keydown', (e) => {
+      // 좌/우 방향키로 시트 좌우 이동
+      if (e.key === 'ArrowLeft') {
+        seatPositionX -= 1; // 시트를 왼쪽으로 세밀하게 이동
+        seat.style.left = `${seatPositionX}%`;
+      } else if (e.key === 'ArrowRight') {
+        seatPositionX += 1; // 시트를 오른쪽으로 세밀하게 이동
+        seat.style.left = `${seatPositionX}%`;
+      }
+
+      // 위/아래 방향키로 등받이 각도 조절
+      if (e.key === 'ArrowUp') {
+        backrestAngle -= 2; // 등받이를 위쪽으로(앞쪽) 더 세밀하게 기울임
+      } else if (e.key === 'ArrowDown') {
+        backrestAngle += 2; // 등받이를 아래쪽으로(뒤쪽) 더 세밀하게 기울임
+      }
+
+      // 등받이 각도 업데이트
+      backrest.style.transform = `rotate(${backrestAngle}deg) translateX(-50%)`;
+    });
+  </script>
+
+</body>
+</html>

@@ -6,36 +6,7 @@
   <title>습도 조절</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* 기본 레이아웃 스타일 */
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; /* 세로로 배치, 상단에 배치 */
-      align-items: flex-start; /* 가로 좌표 맞춤 */
-      height: 100vh;
-      margin: 0;
-      background-color: #1e1e1e;
-      color: white;
-      position: relative;
-    }
-
-    h1 {
-      font-size: 60px;
-      margin-bottom: 10px;
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 0px; /* 타이틀과 서브타이틀 간격 */
-      position: absolute;
-      top: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    
 
     #thermometer {
       width: 250px;
@@ -100,25 +71,7 @@
       font-weight: bold;
     }
 
-    .button-container {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-      margin-top: 40px;
-      position: absolute;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .progress-bar {
-      width: 800px;
-      margin: 40px 0;
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    
 
   </style>
 </head>
@@ -127,7 +80,7 @@
   <h1>습도를 조정해주세요</h1>
   <h2>프로필에 접속하면 자동으로 내가 설정한 습도로 조정돼요</h2>
 
-  <img src="material-symbols_humidity-mid.png" id="thermometer" alt="Thermometer Icon">
+  <img src="image/material-symbols_humidity-mid.png" id="thermometer" alt="Thermometer Icon">
     
   <div class="slider-container">
     <input type="range" min="10" max="90" value="50" class="slider" id="humiditySlider">
