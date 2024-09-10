@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴식 모드</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .top-menu {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding-top: 100px; /* 아이콘을 더 아래로 내림 */
+        }
+
+        .menu-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* 아이콘을 완벽한 원으로 만듦 */
+            background-color: #4a4a4a;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .menu-item p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            width: 400%; /* 4개의 슬라이드를 포함할 수 있는 너비 */
+            transition: transform 0.5s ease;
+            height: 45vh; /* 슬라이드 화면 높이 줄임 */
+            margin: 0 auto; /* 좌우 중앙 정렬 */
+        }
+
+        .content {
+            flex: 1;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 18px;
+            border-radius: 20px;
+            margin: 0 20px; /* 각 슬라이드 사이에 간격을 둠 */
+            min-width: calc(70vw - 40px); /* 슬라이드 크기 조정 (더 줄임) */
+            height: 100%; /* 높이를 슬라이드 컨테이너에 맞춤 */
+            box-sizing: border-box;
+        }
+
+        .responsive-image {
+
+        width: 100%; /* 부모 요소의 너비에 맞게 이미지 크기 조정 */
+        height: auto; /* 비율을 유지하며 높이 자동 조정 */
+        object-fit: contain; /* 이미지가 잘리지 않도록 조정 */
+        }
+
+        /* 슬라이드 인디케이터 */
+        .indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .indicator span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #888;
+            cursor: pointer;
+        }v
+
+        .indicator .active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 메뉴 -->
+<div class="top-menu">
+    <div class="menu-item" onclick="showContent(1)">
+        <img src="carbon_light-filled.png" alt="조명 설정">
+        <p>조명 설정</p>
+    </div>
+    <div class="menu-item" onclick="showContent(2)">
+        <img src="icon_soundoff_.png" alt="외부 소음 차단" class="responsive-image">
+        <p>외부 소음 차단</p>
+    </div>
+    <div class="menu-item" onclick="showContent(3)">
+        <img src="icon_headset_.png" alt="ASMR" class="responsive-image">
+        <p>ASMR</p>
+    </div>
+</div>
+
+<!-- 컨텐츠 슬라이드 -->
+<div class="content-wrapper" id="content-wrapper">
+    <div class="content">
+        <p>Switching to ASMR experience</p>
+    </div>
+    <div class="content">
+        <p>조명 설정 화면</p>
+    </div>
+    <div class="content">
+        <p>외부 소음 차단 화면</p>
+    </div>
+    <div class="content">
+        <p>ASMR 모드 화면</p>
+    </div>
+</div>
+
+<!-- 슬라이드 인디케이터 -->
+<div class="indicator">
+    <span class="active" id="indicator-0" onclick="showContent(0)"></span>
+    <span id="indicator-1" onclick="showContent(1)"></span>
+    <span id="indicator-2" onclick="showContent(2)"></span>
+    <span id="indicator-3" onclick="showContent(3)"></span>
+</div>
+
+<script>
+    const contentWrapper = document.getElementById('content-wrapper');
+    const indicators = document.querySelectorAll('.indicator span');
+
+    function showContent(index) {
+        // 슬라이드를 해당 화면으로 이동
+        contentWrapper.style.transform = `translateX(-${index * (100 / 4)}%)`;
+
+        // 인디케이터 업데이트
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+</script>
+
+</body>
+</html>

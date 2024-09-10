@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관심 모드 선택</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 기존 CSS 파일 -->
+    <style>
+        /* 그리드 레이아웃을 중앙에 배치 */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
+            gap: 40px; /* 버튼 간격을 더 넓게 조정 */
+            justify-items: center; /* 버튼을 중앙에 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+            margin-top: 50px;
+        }
+
+        /* 버튼 기본 스타일 */
+        .interest-button {
+            padding: 15px 50px; /* 버튼 크기 조정 */
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 70px;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .interest-button span {
+            font-size: 30px; /* +, - 버튼의 크기를 키움 */
+            margin-left: 10px;
+        }
+
+        /* 선택된 버튼 스타일 */
+        .selected {
+            background-color: #E02F2D; /* 선택 시 빨간색으로 변경 */
+            color: white;
+        }
+
+        /* 전체 화면 중앙에 배치 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 뷰포트 전체 높이 사용 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 제목과 부제목 -->
+    <div class="container">
+        <h1>관심있는 모드를 선택해주세요</h1>
+        <h2>관심사를 기반으로 나만의 대시보드를 만들어드려요</h2>
+
+        <!-- 관심 모드 버튼 -->
+        <div class="button-grid">
+            <button class="interest-button" id="language" data-state="plus">어학<span>+</span></button>
+            <button class="interest-button" id="parenting" data-state="plus">육아<span>+</span></button>
+            <button class="interest-button" id="movie" data-state="plus">영화<span>+</span></button>
+            <button class="interest-button" id="rest" data-state="plus">휴식<span>+</span></button>
+            <button class="interest-button" id="game" data-state="plus">게임<span>+</span></button>
+            <button class="interest-button" id="reading" data-state="plus">독서<span>+</span></button>
+            <button class="interest-button" id="work" data-state="plus">업무<span>+</span></button>
+            <button class="interest-button" id="health" data-state="plus">건강<span>+</span></button>
+            <button class="interest-button" id="shopping" data-state="plus">쇼핑<span>+</span></button>
+        </div>
+
+        <!-- 이전/다음 버튼 -->
+        <div class="button-container">
+            <button id="prevBtn">이전</button>
+            <button id="nextBtn">다음</button>
+        </div>
+
+        <!-- 진행 바 -->
+        <div class="progress-bar">
+            <div style="width: 40%;"></div> <!-- 진행 상태를 나타내는 부분 -->
+        </div>
+    </div>
+
+    <script>
+        // 각 버튼에 이벤트 리스너 추가
+        document.querySelectorAll('.interest-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const state = this.getAttribute('data-state');
+                
+                if (state === 'plus') {
+                    this.classList.add('selected');
+                    this.querySelector('span').textContent = '-';
+                    this.setAttribute('data-state', 'minus');
+                } else {
+                    this.classList.remove('selected');
+                    this.querySelector('span').textContent = '+';
+                    this.setAttribute('data-state', 'plus');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
