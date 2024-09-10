@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이콘 선택</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px; /* 두 텍스트 간 간격 조정 */
+            font-size: 28px; /* 글씨 크기 키움 */
+            margin-top: -40px; /* 텍스트를 위로 올림 */
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #999;
+            font-size: 12px; /* 크기 유지 */
+            margin-top: -10px; /* 겹치지 않게 간격 조정 */
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .icon {
+            background-color: #4a4a4a;
+            border-radius: 20px;
+            padding: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 0 70px; /* 버튼을 바깥쪽으로 배치 */
+        }
+
+        button {
+            padding: 5px 15px; /* 버튼 크기 유지 */
+            background-color: white;
+            border: none;
+            border-radius: 30px; /* 둥근 버튼 */
+            cursor: pointer;
+            font-size: 10px; /* 글자 크기 유지 */
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .progress-bar-container {
+            width: 45%; /* 바 길이 유지 */
+            height: 4px; /* 바 높이 유지 */
+            background-color: #666;
+            border-radius: 5px;
+            margin: 20px auto; /* 가운데 정렬 */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-section {
+            width: 20%;
+            height: 100%;
+            background-color: #666;
+            border-radius: 5px;
+        }
+
+        .progress-section.active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>아이콘 선택</h1>
+    <p>내 프로필 아이콘을 선택해보세요</p>
+
+    <div class="icon-grid">
+        <div class="icon" onclick="selectIcon(1)">
+            <img src="icon1.png" alt="아이콘 1">
+        </div>
+        <div class="icon" onclick="selectIcon(2)">
+            <img src="icon2.png" alt="아이콘 2">
+        </div>
+        <div class="icon" onclick="selectIcon(3)">
+            <img src="icon3.png" alt="아이콘 3">
+        </div>
+        <div class="icon" onclick="selectIcon(4)">
+            <img src="icon4.png" alt="아이콘 4">
+        </div>
+        <div class="icon" onclick="selectIcon(5)">
+            <img src="icon5.png" alt="아이콘 5">
+        </div>
+        <div class="icon" onclick="selectIcon(6)">
+            <img src="icon6.png" alt="아이콘 6">
+        </div>
+        <div class="icon" onclick="selectIcon(7)">
+            <img src="icon7.png" alt="아이콘 7">
+        </div>
+        <div class="icon" onclick="selectIcon(8)">
+            <img src="icon8.png" alt="아이콘 8">
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button onclick="previousPage()">이전</button>
+        <button onclick="nextPage()">다음</button>
+    </div>
+
+    <div class="progress-bar-container">
+        <div class="progress-section"></div>
+        <div class="progress-section active"></div> <!-- 두 번째 칸이 빨간색 -->
+        <div class="progress-section"></div>
+        <div class="progress-section"></div>
+        <div class="progress-section"></div>
+    </div>
+</div>
+
+<script>
+    function selectIcon(iconNumber) {
+        console.log("Icon " + iconNumber + " selected");
+        // 아이콘 선택 시 동작할 추가 로직을 여기서 구현하세요
+    }
+
+    function previousPage() {
+        console.log("이전 화면으로 이동");
+        // 이전 페이지로 이동하는 로직 구현
+    }
+
+    function nextPage() {
+        console.log("다음 화면으로 이동");
+        // 다음 페이지로 이동하는 로직 구현
+    }
+</script>
+
+</body>
+</html>
