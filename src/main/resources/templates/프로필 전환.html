@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 선택</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap; /* 아이콘들이 중앙에 잘 배치되도록 감쌈 */
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile {
+            width: 10vw;  /* 아이콘 크기를 줄임 */
+            height: 10vw;
+            border-radius: 20px;
+            background-color: #4a4a4a;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .profile:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-name {
+            margin-top: 10px;
+            font-size: 1.5vw; /* 텍스트 크기를 적당히 조절 */
+            color: #b0b0b0;
+        }
+
+        .create-profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .create-profile {
+            width: 8vw;
+            height: 8vw;
+            border-radius: 50%;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .create-profile:hover {
+            transform: scale(1.05);
+        }
+
+        .create-profile .create-icon {
+            font-size: 3vw;
+            color: black;
+            border-radius: 50%;
+        }
+
+        .create-name {
+            margin-top: 10px;
+            font-size: 1.5vw;
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 사용자 1 -->
+    <div class="profile-container">
+        <div class="profile" onclick="goToProfile('user1')">
+            <img src="Rectangle 4154.png" alt="사용자1">
+        </div>
+        <div class="profile-name">사용자1</div>
+    </div>
+
+    <!-- 사용자 2 -->
+    <div class="profile-container">
+        <div class="profile" onclick="goToProfile('user2')">
+            <img src="Rectangle 4151.png" alt="사용자2">
+        </div>
+        <div class="profile-name">사용자2</div>
+    </div>
+
+    <!-- 사용자 3 -->
+    <div class="profile-container">
+        <div class="profile" onclick="goToProfile('user3')">
+            <img src="Rectangle 4153.png" alt="사용자3">
+        </div>
+        <div class="profile-name">사용자3</div>
+    </div>
+
+    <!-- 사용자 4 -->
+    <div class="profile-container">
+        <div class="profile" onclick="goToProfile('user4')">
+            <img src="Rectangle 4148.png" alt="사용자4">
+        </div>
+        <div class="profile-name">사용자4</div>
+    </div>
+
+    <!-- 새 프로필 생성 -->
+    <div class="create-profile-container">
+        <div class="create-profile" onclick="createNewProfile()">
+            <div class="create-icon">+</div>
+        </div>
+        <div class="create-name">새 프로필 생성</div>
+    </div>
+</div>
+
+<script>
+    // 사용자 페이지로 이동하는 함수 (페이지 전환 로직 구현)
+    function goToProfile(user) {
+        // 실제 페이지 전환 로직 (예: window.location.href = 'user1.html');
+    }
+
+    // 새 프로필 생성 페이지로 이동하는 함수
+    function createNewProfile() {
+        // 새 프로필 생성 페이지로 이동 (예: window.location.href = 'create-profile.html');
+    }
+</script>
+
+</body>
+</html>

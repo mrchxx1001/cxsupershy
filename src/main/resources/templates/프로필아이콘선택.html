@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이콘 선택</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 0 20%; /* 좌우 여백 추가 */
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 40px;
+            margin-top: -40px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #999;
+            font-size: 20px;
+            margin-top: -10px;
+        }
+
+        .icon-grid {
+            display: grid;
+            width: 90%;
+            height: 50%;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin: 20px 0;
+        }
+
+        .icon {
+            background-color: #4a4a4a;
+            border-radius: 20px;
+            padding: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .icon img {
+            max-width: 100%; /* 아이콘 이미지 크기를 아이콘 컨테이너 안에 맞춤 */
+            border-radius: 20px;
+
+        }
+
+        .responsive-image {
+        width: 100%; /* 부모 요소의 너비에 맞춰 이미지 확대 */
+        height: 100%; /* 부모 요소의 높이에 맞춰 이미지 확대 */
+        object-fit: fill; /* 부모 요소를 꽉 채우도록 이미지 확장 (비율 무시) */
+        display: block; /* 이미지가 인라인 요소일 경우 블록으로 설정 */
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        button {
+            padding: 10px 30px;
+            background-color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .progress-bar-container {
+            width: 60%;
+            height: 6px;
+            background-color: #666;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-section {
+            width: 20%;
+            height: 100%;
+            background-color: #666;
+            border-radius: 5px;
+        }
+
+        .progress-section.active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>아이콘 선택</h1>
+    <p>내 프로필 아이콘을 선택해보세요</p>
+
+    <div class="icon-grid">
+        <div class="icon" onclick="selectIcon(1)">
+            <img src="Rectangle 4147.png" alt="아이콘 1" class="responsive-image">
+        </div>
+        <div class="icon" onclick="selectIcon(2)">
+            <img src="Rectangle 4149.png" alt="아이콘 2" class="responsive-image">
+        </div>
+        <div class="icon" onclick="selectIcon(3)">
+            <img src="Rectangle 4151.png" alt="아이콘 3" class="responsive-image">
+        </div>
+        <div class="icon" onclick="selectIcon(4)">
+            <img src="Rectangle 4153.png" alt="아이콘 4" class="responsive-image">
+        </div>
+        <div class="icon" onclick="selectIcon(5)">
+            <img src="Rectangle 4150.png" alt="아이콘 5" class="responsive-image">
+        </div>
+        <div class="icon" onclick="selectIcon(6)">
+            <img src="Rectangle 4148.png" alt="아이콘 6" class="responsive-image">
+        </div>
+        <div class="icon" onclick="selectIcon(7)">
+            <img src="Rectangle 4152.png" alt="아이콘 7" class="responsive-image">
+        </div>
+        <div class="icon" onclick="selectIcon(8)">
+            <img src="Rectangle 4154.png" alt="아이콘 8" class="responsive-image">
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button onclick="previousPage()">이전</button>
+        <button onclick="nextPage()">다음</button>
+    </div>
+
+    <div class="progress-bar-container">
+        <div class="progress-section"></div>
+        <div class="progress-section active"></div> <!-- 두 번째 칸이 빨간색 -->
+        <div class="progress-section"></div>
+        <div class="progress-section"></div>
+        <div class="progress-section"></div>
+    </div>
+</div>
+
+<script>
+    function selectIcon(iconNumber) {
+        console.log("Icon " + iconNumber + " selected");
+        // 아이콘 선택 시 동작할 추가 로직을 여기서 구현하세요
+    }
+
+    function previousPage() {
+        console.log("이전 화면으로 이동");
+        // 이전 페이지로 이동하는 로직 구현
+    }
+
+    function nextPage() {
+        console.log("다음 화면으로 이동");
+        // 다음 페이지로 이동하는 로직 구현
+    }
+</script>
+
+</body>
+</html>
