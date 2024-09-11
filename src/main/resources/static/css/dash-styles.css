@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 패딩과 보더를 포함한 크기 계산 */
+}
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1E1E1E;
+    color: white;
+    height: 100vh;
+    overflow: hidden; /* 스크롤을 없앰 */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "nav content";
+    height: 100%;
+    overflow: hidden;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #1E1E1E;
+    padding: 10px 10px 10px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start; /* 아이콘들이 왼쪽 정렬 */
+    height: 80%;
+}
+
+.nav img {
+    height: 30px;
+    display: flex;
+    transition: transform 0.3s ease; /* 부드러운 변화를 위해 transition 추가 */
+}
+
+.nav img:hover {
+    transform: scale(1.2); /* 마우스를 올렸을 때 아이콘이 1.2배 확대 */
+    cursor: pointer; /* 커서가 포인터로 변경 */
+}
+
+
+
+.header {
+    grid-area: header;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.header .logo {
+    display: flex; /* Flexbox를 사용해 이미지와 텍스트를 가로로 정렬 */
+    align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
+    margin-right: 70px;
+    margin-top: 0px;
+    font-size: 15px;
+  
+}
+
+.header .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 30px; /* 이미지와 텍스트 사이 간격 */
+    margin-top: 10px; 
+}
+
+.header .search {
+    margin-top: 10px; 
+    background-color: #333;
+    padding: 10px;
+    border-radius: 30px;
+    width: 500px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-right: 380px;
+}
+
+.header .search input {
+    border: none;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.header .weather-img{
+    margin-top: 10px; 
+    margin-right: 20px;
+}
+
+.header .weather{
+    margin-top: 10px; 
+    margin-right: 20px;
+}
+
+.header .notify{
+    margin-top: 10px; 
+    margin-right: 20px;
+}
+
+
+.header .profileimg{
+    margin-top: 10px; 
+}
+
+.content {
+    transform: scale(0.85); /* 크기를 80%로 축소 */
+    transform-origin: top left; /* 좌측 상단을 기준으로 축소 */
+    width: 100%; /* 너비를 80%로 설정하여 중앙에 정렬되기 쉽게 */
+    margin: 0px auto 0px 110px; /* 중앙 정렬 및 위쪽 여백 20px 설정 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 0; /* 내부 패딩을 0으로 설정하여 여백 줄이기 */
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+
+    /* Flexbox 사용하여 중앙 정렬 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;     /* 세로 중앙 정렬 */
+    text-align: center;      /* 텍스트 중앙 정렬 (수평) */
+    margin: 0;
+    width: 100%; /* 카드가 부모 요소를 넘지 않도록 설정 */
+    box-sizing: border-box; /* 패딩과 보더를 포함한 크기 계산 */
+  
+}
+
+.app{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+   
+    
+}
+
+
+
+
+.destination{
+    background-color: #1E1E1E;
+    padding: 20px;
+    width: 100px;
+    height: 30px;
+}
+
+.emergency{
+    height: 100px;
+    width: auto;
+}
+
+.score {
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #1E1E1E;
+    padding: 20px 80px; /* 좌우 패딩을 40px로 설정하여 첫 번째 아이콘의 시작 위치 조정 */
+    display: flex;
+    justify-content: flex-start; /* 아이콘들이 왼쪽에서 시작하도록 설정 */
+    align-items: center;
+    gap: 30px; /* 앱 아이콘 간의 간격을 30px로 설정 */
+    height: 80px;
+}
+
+.footer .app-icon {
+    width: 200px;
+    height: auto;
+    flex-grow: 0;
+    padding: 17px 21px 35px;
+    border-radius: 10px;
+    margin-bottom: 50px; /* 아이콘의 아래쪽 간격 */
+}
+
+
+.content img {
+    max-width: 100%; /* 이미지가 부모 요소 너비를 넘지 않도록 설정 */
+    height: auto;    /* 이미지 비율을 유지하면서 높이를 자동 조정 */
+    object-fit: contain; /* 이미지가 부모 요소 안에서 비율을 유지하며 잘리지 않도록 설정 */
+}
+
+
+/* 다른 스타일들이 덮어씌우지 않도록 우선순위 설정 */
+.card.emergency-card {
+    display: flex !important; /* 플렉스 레이아웃 강제 적용 */
+    align-items: center !important; /* 수직 중앙 정렬 */
+    justify-content: flex-start !important; /* 텍스트가 이미지 옆에 오도록 설정 */
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+    flex-direction: row;
+}
+
+.card.emergency-card img {
+    max-width: 100px !important; /* 이미지 크기 제한 */
+    margin-right: 20px !important; /* 이미지와 텍스트 사이 간격 */
+}
+
+.card.emergency-card .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 토글 버튼 스타일 */
+.toggle-button {
+    width: 70px;
+    height: 40px;
+    background-color: #4B4B4B;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 200px;
+}
+
+/* 토글 버튼 내의 빨간 동그라미 */
+.toggle-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #E02F2D;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; /* 버튼의 중앙에 배치 */
+    transform: translateY(-50%); /* 수직 중앙을 맞추기 위해 transform 사용 */
+    left: 3px; /* 처음에는 왼쪽에 배치 */
+    transition: left 0.3s ease; /* 동그라미의 이동을 부드럽게 처리 */
+}
+
+/* 토글이 활성화되었을 때 배경과 동그라미 이동 */
+.toggle-button.active {
+    background-color: #333; /* 버튼 배경이 어두워짐 */
+}
+
+.toggle-button.active .toggle-circle {
+    left: 33px; /* 빨간 동그라미가 오른쪽으로 이동 */
+}
+
+
+
+/* 모든 카드에 있는 이미지에 마우스 오버 효과 적용 */
+.card img {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 부드러운 변화를 위한 transition */
+}
+
+/* 마우스 오버 시 효과 */
+.card img:hover {
+    transform: scale(1.1); /* 이미지를 1.1배 확대 */
+    opacity: 0.8; /* 이미지 투명도를 80%로 설정 */
+    cursor: pointer; /* 마우스를 올리면 커서가 포인터로 변경 */
+}
+
+/* emergency-card 안의 이미지에는 효과 제외 */
+.card.emergency-card img {
+    transform: none; /* transform 효과 제거 */
+    opacity: 1; /* opacity를 원래 상태로 유지 */
+    cursor: default; /* 커서를 기본 상태로 유지 */
+}
+
+
+
+/* app 내 이미지에 마우스 오버 효과 적용 */
+.app img {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 부드러운 변화를 위한 transition */
+}
+
+.app img:hover {
+    transform: scale(1.1); /* 마우스를 올렸을 때 이미지를 1.1배 확대 */
+    opacity: 0.8; /* 마우스를 올렸을 때 이미지의 투명도를 80%로 설정 */
+    cursor: pointer; /* 마우스를 올리면 커서가 포인터로 변경 */
+}
+
+
+/* 프로필 이미지에 마우스 오버 효과 적용 */
+.header .profileimg {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 부드러운 변화를 위한 transition */
+}
+
+.header .profileimg:hover {
+    transform: scale(1.1); /* 마우스를 올렸을 때 이미지를 1.1배 확대 */
+    opacity: 0.8; /* 마우스를 올렸을 때 이미지의 투명도를 80%로 설정 */
+    cursor: pointer; /* 마우스를 올리면 커서가 포인터로 변경 */
+}
+
