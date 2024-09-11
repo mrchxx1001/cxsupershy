@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>온도 조절</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>습도 조절</title>
+  <link rel="stylesheet" href="../../static/css/styles.css">
   <style>
+    
 
     #thermometer {
       width: 250px;
-      height: 250px;
+      height: 300px;
       position: absolute;
-      left: 650px; /* 이미지의 x 좌표 */
-      top: 200px; /* 이미지의 y 좌표 */
+      left: 630px; /* 이미지의 x 좌표 */
+      top: 180px; /* 이미지의 y 좌표 */
     }
 
     .slider-container {
@@ -62,30 +63,30 @@
       cursor: pointer;
     }
 
-    #temperature {
+    #humidity {
       font-size: 48px;
       position: absolute;
-      left: 720px; /* 온도의 x 좌표 */
-      top: 470px; /* 온도의 y 좌표 */
+      left: 720px; /* 습도의 x 좌표 */
+      top: 470px; /* 습도의 y 좌표 */
       font-weight: bold;
     }
 
-   
+    
 
   </style>
 </head>
 <body>
 
-  <h1>온도를 조정해주세요</h1>
-  <h2>프로필에 접속하면 자동으로 내가 설정한 온도로 조정돼요</h2>
+  <h1>습도를 조정해주세요</h1>
+  <h2>프로필에 접속하면 자동으로 내가 설정한 습도로 조정돼요</h2>
 
-  <img src="image/bi_thermometer-snow.png" id="thermometer" alt="Thermometer Icon">
+  <img src="../../static/image/material-symbols_humidity-mid.png" id="thermometer" alt="Thermometer Icon">
     
   <div class="slider-container">
-    <input type="range" min="10" max="40" value="23" class="slider" id="temperatureSlider">
+    <input type="range" min="10" max="90" value="50" class="slider" id="humiditySlider">
   </div>
 
-  <div id="temperature">23°C</div>
+  <div id="humidity">50%</div>
 
   <div class="button-container">
     <button id="prevBtn">이전</button>
@@ -97,34 +98,34 @@
   </div>
 
   <script>
-    const slider = document.getElementById('temperatureSlider');
-    const temperatureDisplay = document.getElementById('temperature');
+    const slider = document.getElementById('humiditySlider');
+    const humidityDisplay = document.getElementById('humidity');
 
     // 초기 값 설정
-    let temperature = 23;
-    updateTemperature(temperature);
+    let humidity = 50;
+    updateHumidity(humidity);
 
-    // 슬라이더 조작 시 온도 업데이트
+    // 슬라이더 조작 시 습도 업데이트
     slider.addEventListener('input', (e) => {
-      temperature = e.target.value;
-      updateTemperature(temperature);
+      humidity = e.target.value;
+      updateHumidity(humidity);
     });
 
-    // 키보드 방향키로 온도 조절
+    // 키보드 방향키로 습도 조절
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowUp' && temperature < 40) {
-        temperature++;
-        updateTemperature(temperature);
-      } else if (e.key === 'ArrowDown' && temperature > 10) {
-        temperature--;
-        updateTemperature(temperature);
+      if (e.key === 'ArrowUp' && humidity < 90) {
+        humidity++;
+        updateHumidity(humidity);
+      } else if (e.key === 'ArrowDown' && humidity > 10) {
+        humidity--;
+        updateHumidity(humidity);
       }
     });
 
-    // 온도 업데이트 함수
-    function updateTemperature(temp) {
-      temperatureDisplay.textContent = `${temp}°C`;
-      slider.value = temp;
+    // 습도 업데이트 함수
+    function updateHumidity(hum) {
+      humidityDisplay.textContent = `${hum}%`;
+      slider.value = hum;
     }
   </script>
 
