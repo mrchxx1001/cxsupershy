@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 이전 버튼 클릭 이벤트 처리
-    document.getElementById("prevBtn").addEventListener("click", function() {
+    document.getElementById("previous").addEventListener("click", function() {
         window.history.back(); // 이전 페이지로 이동
     });
 
     // 다음 버튼 클릭 이벤트 처리
-    document.getElementById("nextBtn").addEventListener("click", function() {
+    document.getElementById("next").addEventListener("click", function() {
         window.location.href = "/register-finish"; // 다음 페이지로 이동 (URL에 맞게 수정)
     });
 });
