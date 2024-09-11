@@ -12,59 +12,52 @@ public class UserViewController {
         return "/register/intro";
     }
 
-    // css 경로 선택
     @GetMapping("/set-nickname")
     public String setNickname(){
-        return "set-nickname";
+        return "/register/set-nickname";
     }
 
-    // 폰트 경로 다시 바꾸기
     @GetMapping("/select-profile-icon")
     public String selectProfileIcon() {
-        return "select-profile-icon";
+        return "/register/select-profile-icon";
     }
 
-    // 배경색이 적용이 안되어있음
     @GetMapping("/custom-mode")
     public String customMode() {
-        return "custom-mode";
+        return "/register/custom-mode";
     }
 
-    // css, 이미지
     @GetMapping("/custom-seat")
     public String customSeat() {
-        return "custom-seat";
+        return "/register/custom-seat";
     }
 
     // 제작 중
     @GetMapping("/custom-mirror")
     public String customMirror() {
-        return "custom-mirror";
+        return "/register/custom-mirror";
     }
 
-    // css, 이미지
     @GetMapping("/custom-temperature")
     public String customTemperature() {
-        return "custom-temperature";
-    }
+        return "/register/custom-temperature";
+    }s
 
-
-    // css, 이미지
     @GetMapping("/custom-humid")
     public String customHumidity() {
-        return "custom-humid";
+        return "/register/custom-humid";
     }
 
     // 플라스크 적용
     @GetMapping("/show-flask-page")
     public String showFlaskPage() {
         // 이 메서드는 templates 폴더에 있는 "flaskPage.html"을 렌더링
-        return "flaskPage";
+        return "/register/flaskPage";
     }
 
     @GetMapping("/welcome")
     public String welcome(){
-        return "register-finish";
+        return "/register/register-finish";
     }
 
     // 대시보드 제작 중

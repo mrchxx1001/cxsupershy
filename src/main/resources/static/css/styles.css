@@ -2,7 +2,7 @@
 /* Light 폰트 불러오기 */
 @font-face {
     font-family: 'LGElText';
-    src: url('font/LGEITextTTF-Light.ttf') format('truetype');
+    src: url('../font/LGEITextTTF-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal; /* light 대신 normal 사용 */
 }
@@ -10,7 +10,7 @@
 /* Regular 폰트 불러오기 */
 @font-face {
     font-family: 'LGElText';
-    src: url('font/LGEITextTTF-Regular.ttf') format('truetype');
+    src: url('../font/LGEITextTTF-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -18,7 +18,7 @@
 /* Bold 폰트 불러오기 */
 @font-face {
     font-family: 'LGElText';
-    src: url('font/LGEITextTTF-Bold.ttf') format('truetype');
+    src: url('../font/LGEITextTTF-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal; /* bold 대신 normal 사용 */
 }
@@ -26,7 +26,7 @@
 /* Semi-Bold 폰트 불러오기 */
 @font-face {
     font-family: 'LGElText';
-    src: url('font/LGEITextTTF-SemiBold.ttf') format('truetype');
+    src: url('../font/LGEITextTTF-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal; /* bold 대신 normal 사용 */
 }
@@ -37,7 +37,7 @@
 >>>>>>> b9cf43e7ea5da4fe9ce3b4b2ec5d7e833dea3e86:src/main/resources/static/css/styles.css
 /* 기본적인 공통 폰트와 색상 설정 */
 @font-face {
-            font-family: 'LGEIText';
+            font-family: 'LGElText';
             src: url("../font/LGEITextTTF-Bold.ttf") format('truetype'); /* 폰트 파일 경로 */
         }
 
