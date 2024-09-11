@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LG Sync Car</title>
+<!--    <link rel="stylesheet" href="css/styles.css">-->
     <style>
+        /*글씨가 너무 작아서 공통 css 파일 죽이고, style 태그 살려두었습니다(자연)*/
         @font-face {
-            font-family: 'LGEIText';
-            src: url('../static/font/LGEITextTTF-Bold.ttf') format('truetype'); /* 폰트 파일 경로 */
+            font-family: 'LGElText';
+            src: url('font/LGEITextTTF-Bold.ttf') format('truetype'); /* 폰트 파일 경로 */
         }
 
         body {
             margin: 0;
-            font-family: 'LGEIText', sans-serif;
+            font-family: 'LGElText', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,5 +47,6 @@
     <div class="container">
         <div class="title">프로필 등록이 완료되었습니다!</div>
     </div>
+    <script src="js/registerFinish.js"></script>
 </body>
 </html>

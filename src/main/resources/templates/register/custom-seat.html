@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>시트 조절</title>
-  <link rel="stylesheet" href="../../static/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <style>
     
     #seat {
@@ -35,12 +35,12 @@
   <h1>시트를 조정해주세요</h1>
   <h2>프로필에 접속하면 자동으로 내가 설정한 시트 위치로 조정돼요</h2>
 
-  <img src="../../static/image/backrest.png" id="backrest" alt="등받이">
-  <img src="../../static/image/seat.png" id="seat" alt="시트">
+  <img src="image/backrest.png" id="backrest" alt="등받이">
+  <img src="image/seat.png" id="seat" alt="시트">
     
   <div class="button-container">
-    <button id="prevBtn">이전</button>
-    <button id="nextBtn">다음</button>
+    <button id="previous">이전</button>
+    <button id="next">다음</button>
   </div>
 
   <div class="progress-bar">
@@ -76,6 +76,7 @@
       backrest.style.transform = `rotate(${backrestAngle}deg) translateX(-50%)`;
     });
   </script>
+  <script src="js/customSeat.js"></script>
 
 </body>
 </html>

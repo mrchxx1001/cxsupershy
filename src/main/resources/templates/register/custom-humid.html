@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>습도 조절</title>
-  <link rel="stylesheet" href="../../static/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <style>
     
 
@@ -12,7 +12,7 @@
       width: 250px;
       height: 300px;
       position: absolute;
-      left: 630px; /* 이미지의 x 좌표 */
+      left: 410px; /* 이미지의 x 좌표 */
       top: 180px; /* 이미지의 y 좌표 */
     }
 
@@ -21,7 +21,7 @@
       flex-direction: column;
       align-items: center;
       position: absolute;
-      left: 780px; /* 슬라이더의 x 좌표 */
+      left: 600px; /* 슬라이더의 x 좌표 */
       top: 350px; /* 슬라이더의 y 좌표 */
     }
 
@@ -66,7 +66,7 @@
     #humidity {
       font-size: 48px;
       position: absolute;
-      left: 720px; /* 습도의 x 좌표 */
+      left: 490px; /* 습도의 x 좌표 */
       top: 470px; /* 습도의 y 좌표 */
       font-weight: bold;
     }
@@ -80,7 +80,7 @@
   <h1>습도를 조정해주세요</h1>
   <h2>프로필에 접속하면 자동으로 내가 설정한 습도로 조정돼요</h2>
 
-  <img src="../../static/image/material-symbols_humidity-mid.png" id="thermometer" alt="Thermometer Icon">
+  <img src="image/material-symbols_humidity-mid.png" id="thermometer" alt="Thermometer Icon">
     
   <div class="slider-container">
     <input type="range" min="10" max="90" value="50" class="slider" id="humiditySlider">
@@ -89,8 +89,8 @@
   <div id="humidity">50%</div>
 
   <div class="button-container">
-    <button id="prevBtn">이전</button>
-    <button id="nextBtn">다음</button>
+    <button id="previous">이전</button>
+    <button id="next">다음</button>
   </div>
 
   <div class="progress-bar">
@@ -128,6 +128,6 @@
       slider.value = hum;
     }
   </script>
-
+  <script src="js/customHumid.js"></script>
 </body>
 </html>

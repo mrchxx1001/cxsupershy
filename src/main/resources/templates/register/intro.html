@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LG Sync Car</title>
- 
+
 
     <style>
         @font-face {
-            font-family: 'LGEIText';
-            src: url('../static/font/LGEITextTTF-Bold.ttf') format('truetype'); /* 폰트 파일 경로 */
+            font-family: 'LGElText';
+            src: url('font/LGEITextTTF-Bold.ttf') format('truetype'); /* 폰트 파일 경로 */
         }
 
         body {
             margin: 0;
-            font-family: 'LGEIText', sans-serif;
+            font-family: 'LGElText', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,6 +29,7 @@
         }
 
         .title {
+            font-family: 'LGElText', sans-serif;
             font-size: 128px;
             font-weight: bold;
             background: linear-gradient(to right, #d32f2f, #7A1A19); /* 그라데이션 색상 */
@@ -39,6 +40,7 @@
         }
 
         .subtitle {
+            font-family: 'LGElText', sans-serif;
             font-size: 48px;
             margin-top: 10px;
             color: #bbb;
@@ -51,6 +53,7 @@
         }
 
         .login-button {
+            font-family: 'LGElText', sans-serif;
             padding: 5px 40px;
             font-size: 1.2em;
             background-color: white;
@@ -60,7 +63,6 @@
             cursor: pointer;
             font-weight: bold;
             margin-bottom: 10px;
-            font-family: 'LGEIText';
         }
 
         .login-button:hover {
@@ -68,30 +70,20 @@
         }
 
         .register-link {
+            font-family: 'LGElText', sans-serif;
             display: block;
             margin-top: 10px;
             font-size: 0.9em;
             color: #bbb;
             cursor: pointer;
+            font-weight: 300; /* Medium 굵기 설정 */
         }
 
         .register-link:hover {
             text-decoration: underline;
         }
-
-        /* 새 프로필 등록하기 링크 스타일 */
-        .register-link {
-            display: block;
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #bbb;
-            cursor: pointer;
-            font-family: 'LGEIText';
-            font-weight: 300; /* Medium 굵기 설정 */
-        }
-
-
     </style>
+
 </head>
 <body>
     <div class="container">
@@ -104,5 +96,6 @@
             <div class="register-link">새 프로필 등록하기</div>
         </div>
     </div>
+    <script src = "js/intro.js"></script>
 </body>
 </html>

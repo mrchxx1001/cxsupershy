@@ -1,43 +1,50 @@
 package com.project.cxsupershy.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.project.cxsupershy.domain.Users;
+import jakarta.servlet.http.HttpSession;
+import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 public class FileService {
-    public Map<String, Object> jsonReader(String path) {
+
+    public String mapToJson(Map<String, Object> data) {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        String dataToJson = null;
         try {
-            // ObjectMapper 객체 생성
-            ObjectMapper objectMapper = new ObjectMapper();
-
-            // JSON 파일을 읽고 Map으로 변환
-            File file = new File(path);
-
-            // JSON을 Map 형태로 읽어들임 (또는 사용할 클래스에 맞게 변경 가능)
-            Map<String, Object> jsonData = objectMapper.readValue(file, Map.class);
-
-            System.out.println(jsonData);
-
-            // JSON에서 필요한 데이터 추출
-            List<List<Double>> embedding = (List<List<Double>>) jsonData.get("embeddings");
-            List<String> name = (List<String>) jsonData.get("names");
-
-            // 출력
-            System.out.println(embedding);  // 1
-            System.out.println(name);  // 1000
-
-            return jsonData;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+            dataToJson = objectMapper.writeValueAsString(data);
+        } catch (JsonProcessingException e) {
+            System.out.println(e.getMessage());
         }
+        return dataToJson;
     }
+
+    public Map<String, Object> jsonToMap(String json) throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        // JSON 문자열을 Map으로 변환
+        return objectMapper.readValue(json, new TypeReference<Map<String, Object>>() {});
+    }
+
+    public String catchNewPerson(Object logData) {
+
+        return "결과";
+    }
+
+    public Map<String, Object> userEmbeddingMapping(Object embeddings) {
+        Map<String, Object> newMap = Map.of("test1",1, "test2",2);
+        return newMap;
+    }
+
 }
