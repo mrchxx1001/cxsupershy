@@ -9,54 +9,65 @@ public class UserViewController {
 
     @GetMapping("/")
     public String first(){
-        return "firstView";
+        return "/register/intro";
     }
 
-    @GetMapping("/go-nickname")
-    public String goNickname(){
-        return "nickname";
+    // css 경로 선택
+    @GetMapping("/set-nickname")
+    public String setNickname(){
+        return "set-nickname";
     }
 
-    @GetMapping("/go-icon")
-    public String goIcon() {
-        return "icon";
+    // 폰트 경로 다시 바꾸기
+    @GetMapping("/select-profile-icon")
+    public String selectProfileIcon() {
+        return "select-profile-icon";
     }
 
-    @GetMapping("/go-mode")
-    public String goMode() {
-        return "mode";
+    // 배경색이 적용이 안되어있음
+    @GetMapping("/custom-mode")
+    public String customMode() {
+        return "custom-mode";
     }
 
-    @GetMapping("/go-seat")
-    public String goSeat() {
-        return "seat";
+    // css, 이미지
+    @GetMapping("/custom-seat")
+    public String customSeat() {
+        return "custom-seat";
     }
 
-    @GetMapping("/go-mirror")
-    public String goMirror() {
-        return "mirror";
+    // 제작 중
+    @GetMapping("/custom-mirror")
+    public String customMirror() {
+        return "custom-mirror";
     }
 
-    @GetMapping("/go-temperature")
-    public String goTemperature() {
-        return "temperature";
+    // css, 이미지
+    @GetMapping("/custom-temperature")
+    public String customTemperature() {
+        return "custom-temperature";
     }
 
-    @GetMapping("/go-humidity")
-    public String goHumidity() {
-        return "humidity";
+
+    // css, 이미지
+    @GetMapping("/custom-humid")
+    public String customHumidity() {
+        return "custom-humid";
     }
 
-    @GetMapping("/go-face")
-    public String goFace() {
-        return "face";
+    // 플라스크 적용
+    @GetMapping("/show-flask-page")
+    public String showFlaskPage() {
+        // 이 메서드는 templates 폴더에 있는 "flaskPage.html"을 렌더링
+        return "flaskPage";
     }
 
     @GetMapping("/welcome")
     public String welcome(){
-        return "createProfileFinish";
+        return "register-finish";
     }
 
+    // 대시보드 제작 중
     @GetMapping("/main")
     public String main(){
         return "main";
