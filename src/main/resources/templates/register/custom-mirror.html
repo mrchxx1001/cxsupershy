@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미러 설정</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e1e;
+            color: white;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            position: absolute;
+            top: 60px;
+            width: 100%;
+        }
+
+        p {
+            font-size: 12px;
+            margin-top: 10px;
+            position: absolute;
+            top: 110px;
+            width: 100%;
+        }
+
+        .mirrors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 120px; /* 이미지 간격을 넓힘 */
+            margin-top: 140px;
+        }
+
+        .mirror-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mirror-img {
+            width: 150px;
+            height: auto;
+            border: 2px solid transparent; /* 선택된 이미지에 테두리를 표시하기 위해 */
+        }
+
+        .selected {
+            border: 2px solid red; /* 선택된 이미지에 붉은 테두리 */
+        }
+
+        #rear-mirror {
+            margin-top: -130px; /* 가운데 이미지를 살짝 위로 */
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 80px;
+            width: 60%; /* 버튼 간격을 더 넓게 조정 */
+            left: 20%;
+        }
+
+        button {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 20px; /* 버튼을 납작하게 만듦 */
+            padding: 5px 15px; /* 버튼 높이를 줄이고 넓이를 늘림 */
+            cursor: pointer;
+            font-weight: bold; /* 버튼 글씨를 볼드체로 설정 */
+        }
+
+        button:active {
+            background-color: #ddd;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 30px;
+            width: 40%;
+            left: 30%;
+            background-color: #333;
+            height: 5px;
+            border-radius: 15px;
+        }
+
+        .progress {
+            background-color: red;
+            height: 100%;
+            width: 80%;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>미러를 조정해주세요</h1>
+    <p>프로필에 접속하면 자동으로 내가 설정한 미러 각도로 조정돼요</p>
+    <div class="mirrors">
+        <div class="mirror-control">
+            <img src="/static/image/rearview-mirror 1.png" alt="왼쪽 사이드 미러" id="left-mirror" class="mirror-img selected">
+        </div>
+        <div class="mirror-control">
+            <img src="/static/image/back-mirror.png" alt="백미러" id="rear-mirror" class="mirror-img">
+        </div>
+        <div class="mirror-control">
+            <img src="/static/image/rearview-mirror 2.png" alt="오른쪽 사이드 미러" id="right-mirror" class="mirror-img">
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="previous">이전</button>
+        <button id="next">다음</button>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+</div>
+
+<script>
+    let selectedMirrorIndex = 0; // 선택된 미러의 인덱스 (0: 왼쪽, 1: 가운데, 2: 오른쪽)
+    const mirrors = document.querySelectorAll('.mirror-img');
+    const mirrorAngles = [0, 0, 0]; // 각 미러의 각도 저장
+
+    // 선택된 미러 강조
+    function updateSelectedMirror() {
+        mirrors.forEach((mirror, index) => {
+            mirror.classList.remove('selected');
+            if (index === selectedMirrorIndex) {
+                mirror.classList.add('selected');
+            }
+        });
+    }
+
+    // 키보드 방향키 입력 처리
+    document.addEventListener('keydown', function(event) {
+        switch (event.key) {
+            case 'ArrowLeft':
+                selectedMirrorIndex = (selectedMirrorIndex - 1 + mirrors.length) % mirrors.length;
+                updateSelectedMirror();
+                break;
+            case 'ArrowRight':
+                selectedMirrorIndex = (selectedMirrorIndex + 1) % mirrors.length;
+                updateSelectedMirror();
+                break;
+            case 'ArrowUp':
+                mirrorAngles[selectedMirrorIndex] += 5; // 위 방향키는 각도를 5도 증가
+                mirrors[selectedMirrorIndex].style.transform = `rotate(${mirrorAngles[selectedMirrorIndex]}deg)`;
+                break;
+            case 'ArrowDown':
+                mirrorAngles[selectedMirrorIndex] -= 5; // 아래 방향키는 각도를 5도 감소
+                mirrors[selectedMirrorIndex].style.transform = `rotate(${mirrorAngles[selectedMirrorIndex]}deg)`;
+                break;
+            default:
+                break;
+        }
+    });
+</script>
+</body>
+</html>
