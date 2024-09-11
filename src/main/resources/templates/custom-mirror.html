@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미러 설정</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e1e;
+            color: white;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            position: absolute;
+            top: 60px;
+            width: 100%;
+        }
+
+        p {
+            font-size: 12px;
+            margin-top: 0px; /* 텍스트 간 간격을 띄움 */
+            position: absolute;
+            top: 110px;
+            width: 100%;
+        }
+
+        .mirrors {
+            display: flex;
+            justify-content: center; /* 이미지 중앙 정렬 */
+            align-items: center;
+            gap: 150px; /* 이미지 간격 */
+            margin-top: 140px;
+        }
+
+        .mirror-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mirror-img {
+            width: 150px; /* 이미지 크기 */
+            height: auto;
+        }
+
+        #rear-mirror {
+            margin-top: -120px; /* 가운데 이미지를 살짝 위로 */
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 80px;
+            width: 70%; /* 버튼 간격을 넓게 */
+            left: 15%;
+        }
+
+        button {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:active {
+            background-color: #ddd;
+        }
+
+        input[type="range"] {
+            width: 150px; /* 슬라이더 길이 */
+            background-color: transparent;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 5px;
+            margin-top: 10px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 30px;
+            width: 40%;
+            left: 30%;
+            background-color: #333;
+            height: 5px;
+            border-radius: 15px;
+        }
+
+        .progress {
+            background-color: red;
+            height: 100%;
+            width: 80%; /* 빨간 바를 5칸 중 4번째에 맞춤 (80%) */
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>미러를 조정해주세요</h1>
+    <p>프로필에 접속하면 자동으로 내가 설정한 미러 각도로 조정돼요</p>
+    <div class="mirrors">
+        <div class="mirror-control">
+            <img src="rearview-mirror 1.png" alt="왼쪽 사이드 미러" id="left-mirror" class="mirror-img">
+            <input type="range" id="left-mirror-angle" min="-45" max="45" value="0">
+        </div>
+        <div class="mirror-control">
+            <img src="back-mirror.png" alt="백미러" id="rear-mirror" class="mirror-img">
+            <input type="range" id="rear-mirror-angle" min="-45" max="45" value="0">
+        </div>
+        <div class="mirror-control">
+            <img src="rearview-mirror 2.png" alt="오른쪽 사이드 미러" id="right-mirror" class="mirror-img">
+            <input type="range" id="right-mirror-angle" min="-45" max="45" value="0">
+        </div>
+    </div>
+    <div class="controls">
+        <button id="previous">이전</button>
+        <button id="next">다음</button>
+    </div>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+</div>
+
+<script>
+    // 각각의 미러가 독립적으로 조정되도록 수정
+    document.getElementById('left-mirror-angle').addEventListener('input', function(event) {
+        const angle = event.target.value;
+        const leftMirror = document.getElementById('left-mirror');
+        leftMirror.style.transform = `rotate(${angle}deg)`;
+    });
+
+    document.getElementById('rear-mirror-angle').addEventListener('input', function(event) {
+        const angle = event.target.value;
+        const rearMirror = document.getElementById('rear-mirror');
+        rearMirror.style.transform = `rotate(${angle}deg)`;
+    });
+
+    document.getElementById('right-mirror-angle').addEventListener('input', function(event) {
+        const angle = event.target.value;
+        const rightMirror = document.getElementById('right-mirror');
+        rightMirror.style.transform = `rotate(${angle}deg)`;
+    });
+</script>
+</body>
+</html>
