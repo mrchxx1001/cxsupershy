@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 다음 페이지로 이동하는 로직
     document.getElementById("nextBtn").addEventListener("click", function() {
         console.log("관심 모드를 선택 후 다음 화면으로 이동");
-        window.location.href = '/next-page'; // 다음 페이지로 이동
+        window.location.href = '/custom-seat'; // 다음 페이지로 이동
     });
 
     // 이전 페이지로 이동하는 로직
