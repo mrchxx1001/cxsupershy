@@ -41,7 +41,7 @@ public class UserViewController {
     @GetMapping("/custom-temperature")
     public String customTemperature() {
         return "/register/custom-temperature";
-    }s
+    }
 
     @GetMapping("/custom-humid")
     public String customHumidity() {
