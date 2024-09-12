@@ -7,7 +7,13 @@
     font-style: normal; /* light 대신 normal 사용 */
 }
 
-
+/* Regular 폰트 불러오기 */
+@font-face {
+    font-family: 'LGElText';
+    src: url('../font/LGEITextTTF-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 /* Bold 폰트 불러오기 */
 @font-face {

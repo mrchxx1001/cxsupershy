@@ -41,9 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(selectedCount > 0){ //최소 1개 이상 선택해야 함
         console.log("관심 모드를 선택 후 다음 화면으로 이동");
         window.location.href = '/custom-seat'; // 다음 페이지로 이동
-    } else {
-        alert("모드를 선택해주세요!"); // 선택하지 않으면 경고창 표시
-    }
+        }
     });
 
     // 이전 페이지로 이동하는 로직

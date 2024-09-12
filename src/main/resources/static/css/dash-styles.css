@@ -184,13 +184,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-    margin: 0 5px; /* app 간의 간격을 설정 */
+    gap: 70px;
+    margin-left: 200px;
+    margin-top: 0px;
 }
 
 .app img{
     width: 330px;
     height: auto;
-    margin: 0 5px; /* app 간의 간격을 설정 */
 }
 
 
