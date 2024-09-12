@@ -97,7 +97,7 @@ body {
 .header .logo {
     display: flex; /* Flexbox를 사용해 이미지와 텍스트를 가로로 정렬 */
     align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
-    margin-right: 70px;
+    margin-right: 200px;
     margin-top: 0px;
     font-size: 15px;
   
@@ -115,11 +115,11 @@ body {
     background-color: #333;
     padding: 10px;
     border-radius: 30px;
-    width: 500px;
+    width: 700px;
     height: 50px;
     display: flex;
     align-items: center;
-    margin-right: 380px;
+    margin-right: 400px;
 }
 
 .header .search input {
@@ -184,11 +184,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-   
+    gap: 10px;
     
 }
 
-
+.app img{
+    width: 350px;
+    height: auto;
+}
 
 
 .destination{
@@ -244,6 +247,7 @@ body {
     justify-content: flex-start !important; /* 텍스트가 이미지 옆에 오도록 설정 */
     text-align: left; /* 텍스트를 왼쪽 정렬 */
     flex-direction: row;
+    padding-left: 100px;
 }
 
 .card.emergency-card img {
@@ -340,4 +344,15 @@ body {
     transform: none;  /* 확대 효과 제거 */
     opacity: 1;       /* 투명도 효과 제거 */
     cursor: default;  /* 커서 모양을 기본으로 유지 */
+}
+
+/* 가로형 화면 (16:9) 비율 */
+@media (min-aspect-ratio: 16/9) {
+    .container {
+        grid-template-columns: 100px 1fr; /* 네비게이션 폭을 넓게 */
+    }
+    .content {
+        transform: scale(1); /* 확대 배율 조정 */
+        margin: 0px auto;
+    }
 }
