@@ -356,3 +356,11 @@ body {
         margin: 0px auto;
     }
 }
+
+.card-no-effect {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    text-align: center; /* 텍스트를 가운데 정렬 (가로 방향) */
+    height: 100%; /* 컨테이너의 전체 높이를 사용하여 세로 정렬 */
+}
