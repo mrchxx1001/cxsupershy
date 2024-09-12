@@ -336,3 +336,8 @@ body {
     cursor: pointer; /* 마우스를 올리면 커서가 포인터로 변경 */
 }
 
+.card-no-effect:hover {
+    transform: none;  /* 확대 효과 제거 */
+    opacity: 1;       /* 투명도 효과 제거 */
+    cursor: default;  /* 커서 모양을 기본으로 유지 */
+}
