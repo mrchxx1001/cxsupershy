@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelector('img[alt="Rest Mode"]').addEventListener('click', function() {
+        console.log("휴식으로 가라구!!!")
         navigateTo('/into-rest-mode');  // 휴식 모드 페이지로 이동
     });
 });

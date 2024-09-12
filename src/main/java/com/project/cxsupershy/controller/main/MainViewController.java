@@ -1,8 +1,13 @@
 package com.project.cxsupershy.controller.main;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.Map;
+
+@ComponentScan
 @Controller
 public class MainViewController {
 
