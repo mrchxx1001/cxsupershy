@@ -63,9 +63,10 @@ public class UserViewController {
         return "/register/register-finish";
     }
 
+
     // 대시보드 제작 중
-    @GetMapping("/main")
-    public String main(){
-        return "main";
+    @GetMapping("/dashboard")
+    public String dashboard(){
+        return "/main/dashboard";
     }
 }
