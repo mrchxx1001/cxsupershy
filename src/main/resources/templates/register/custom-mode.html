@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관심 모드 선택</title>
-    <link rel="stylesheet" href="/css/styles.css"> <!-- 기존 CSS 파일 -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- 기존 CSS 파일 -->
     <style>
+
+        body {
+        overflow: hidden; /* 스크롤을 숨김 */
+    }
+
         /* 그리드 레이아웃을 중앙에 배치 */
         .button-grid {
             display: grid;
@@ -13,24 +18,24 @@
             gap: 40px; /* 버튼 간격을 더 넓게 조정 */
             justify-items: center; /* 버튼을 중앙에 정렬 */
             align-items: center; /* 수직 중앙 정렬 */
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         /* 버튼 기본 스타일 */
         .interest-button {
-            padding: 15px 50px; /* 버튼 크기 조정 */
+            padding: 27px 60px; /* 버튼 크기 조정 */
             background-color: white;
             color: black;
             border: none;
             border-radius: 70px;
             cursor: pointer;
-            font-size: 30px;
+            font-size: 40px;
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
 
         .interest-button span {
-            font-size: 30px; /* +, - 버튼의 크기를 키움 */
+            font-size: 40px; /* +, - 버튼의 크기를 키움 */
             margin-left: 10px;
         }
 
@@ -78,10 +83,14 @@
 
         <!-- 진행 바 -->
         <div class="progress-bar">
-            <div style="width: 40%;"></div> <!-- 진행 상태를 나타내는 부분 -->
+            <div style="width: 38%;"></div> <!-- 진행 상태를 나타내는 부분 -->
         </div>
     </div>
 
+<<<<<<< HEAD
+
+    <script src="js/customMode.js"></script> <!-- 자바스크립트 파일 연결 -->
+=======
     <script>
         // 각 버튼에 이벤트 리스너 추가
         document.querySelectorAll('.interest-button').forEach(button => {
@@ -101,6 +110,7 @@
         });
     </script>
     <script src="/js/customMode.js"></script> <!-- 자바스크립트 파일 연결 -->
+>>>>>>> a81c16390ae0e68723ed6a09705b89e47bed73a3
 
 </body>
 </html>

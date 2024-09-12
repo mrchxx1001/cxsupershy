@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 이전 버튼 클릭 이벤트 처리
-    document.getElementById("previous").addEventListener("click", function() {
+    document.getElementById("prevBtn").addEventListener("click", function() {
         window.history.back(); // 이전 페이지로 이동
     });
 
     // 다음 버튼 클릭 이벤트 처리
-    document.getElementById("next").addEventListener("click", function() {
+    document.getElementById("nextBtn").addEventListener("click", function() {
         window.location.href = "/custom-temperature"; // 다음 페이지로 이동
     });
 });

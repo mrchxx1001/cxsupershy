@@ -169,7 +169,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .progress-bar div {
     height: 100%;
-    background-color: #E02F2D;
+    background-color: #d32f2f;
     border-radius: 20px;
-    width: 20%; /* 기본 20%로 설정 */
+    width: 12%; /* 기본 12%로 설정 */
 }
