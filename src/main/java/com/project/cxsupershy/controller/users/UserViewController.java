@@ -69,4 +69,17 @@ public class UserViewController {
     public String dashboard(){
         return "/main/dashboard";
     }
+
+    @GetMapping("/into-rest-mode")
+    public String intoRestMode(){
+        return "/main/into-rest-mode";
+    }
+
+    @GetMapping("/rest-mode")
+    public String restMode(){
+        return "/main/rest-mode";
+    }
+
+    @GetMapping("/switch-profile")
+    public String switchProfile(){ return "/main/switch-profile"; }
 }
