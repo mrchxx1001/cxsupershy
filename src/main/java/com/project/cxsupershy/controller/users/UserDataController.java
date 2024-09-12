@@ -2,6 +2,7 @@ package com.project.cxsupershy.controller.users;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.project.cxsupershy.domain.Users;
 import com.project.cxsupershy.service.FileService;
 import com.project.cxsupershy.service.UserService;
 import jakarta.persistence.Access;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -72,12 +74,16 @@ public class UserDataController {
 
     @PostMapping("/receive-json")
     public ResponseEntity<String> receiveData(@RequestBody Map<String, Object> data,
-                                              HttpSession session) {
+                              HttpSession session) {
+
+        // embeddings과 logData 추출
         Object embeddings = data.get("embeddings");
-        Object logData = data.get("log_data");
-        String newUser = fileService.catchNewPerson(logData);
-        Map<String, Object> userEmbeddingMapping = fileService.userEmbeddingMapping(embeddings);
-        userService.saveSession(session);
-        return ResponseEntity.ok("데이터를 성공적으로 받았습니다.");
+        List<String> logData = (List<String>) data.get("log_data");
+
+        // 일단 데이터 확인
+        System.out.println("Received embeddings: " + embeddings);
+        System.out.println("Received log_data: " + logData);
+
+        return ResponseEntity.ok("거울 세션 저장 완료");
     }
 }

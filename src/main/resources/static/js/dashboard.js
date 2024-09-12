@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 'Kids App'을 클릭하면 아이들나라로 이동
     document.querySelector('img[alt="Kids App"]').addEventListener('click', function() {
+        console.log("아이들나라로 가라고!")
         navigateTo('https://www.i-nara.co.kr');  // 아이들나라 페이지로 이동
     });
 

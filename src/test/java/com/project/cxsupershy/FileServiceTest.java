@@ -1,10 +1,12 @@
 package com.project.cxsupershy;
 
 import com.project.cxsupershy.service.FileService;
+import jakarta.servlet.http.HttpSession;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FileServiceTest {
@@ -34,5 +36,14 @@ public class FileServiceTest {
         System.out.println(rs);
         System.out.println(rs.get("test1"));
         System.out.println(rs.get("test2"));
+    }
+
+    @Test
+    public void 로그가_제대로_바뀌는것인가() {
+        String logData = "[New person detected: user 6, New person detected: user 7, Login: user 2, New person detected: user 8]";
+
+        FileService fileService = new FileService();
+
+        fileService.getFirstLogToList(logData);
     }
 }

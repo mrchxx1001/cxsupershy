@@ -37,14 +37,20 @@ public class FileService {
         return objectMapper.readValue(json, new TypeReference<Map<String, Object>>() {});
     }
 
-    public String catchNewPerson(Object logData) {
+    public Map<String, Object> getFirstLogToList(List<String> logData) {
+        String firstLog = logData.get(0);
+        String[] parts = firstLog.split(": ");
+        Map<String, Object> result = new HashMap<>();
 
-        return "결과";
+        if (parts[0].equals("New person detected")) {
+            result.put("isNewPerson", true);
+            result.put("userId", parts[1]);
+        } else if (parts[0].equals("Login")) {
+            result.put("isNewPerson", false);
+            result.put("userId", parts[1]);
+        }
+
+        System.out.println(result);
+        return result;
     }
-
-    public Map<String, Object> userEmbeddingMapping(Object embeddings) {
-        Map<String, Object> newMap = Map.of("test1",1, "test2",2);
-        return newMap;
-    }
-
 }

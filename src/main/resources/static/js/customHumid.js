@@ -36,6 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 다음 버튼 클릭 이벤트 처리
     document.getElementById("next").addEventListener("click", function() {
-        window.location.href = "/register-finish"; // 다음 페이지로 이동 (URL에 맞게 수정)
+        window.location.href = "/show-flask-page"; // 다음 페이지로 이동 (URL에 맞게 수정)
     });
 });
