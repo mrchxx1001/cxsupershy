@@ -63,9 +63,23 @@ public class UserViewController {
         return "/register/register-finish";
     }
 
+
     // 대시보드 제작 중
-    @GetMapping("/main")
-    public String main(){
-        return "main";
+    @GetMapping("/dashboard")
+    public String dashboard(){
+        return "/main/dashboard";
     }
+
+    @GetMapping("/into-rest-mode")
+    public String intoRestMode(){
+        return "/main/into-rest-mode";
+    }
+
+    @GetMapping("/rest-mode")
+    public String restMode(){
+        return "/main/rest-mode";
+    }
+
+    @GetMapping("/switch-profile")
+    public String switchProfile(){ return "/main/switch-profile"; }
 }

@@ -87,8 +87,30 @@
         </div>
     </div>
 
+<<<<<<< HEAD
 
     <script src="js/customMode.js"></script> <!-- 자바스크립트 파일 연결 -->
+=======
+    <script>
+        // 각 버튼에 이벤트 리스너 추가
+        document.querySelectorAll('.interest-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const state = this.getAttribute('data-state');
+                
+                if (state === 'plus') {
+                    this.classList.add('selected');
+                    this.querySelector('span').textContent = '-';
+                    this.setAttribute('data-state', 'minus');
+                } else {
+                    this.classList.remove('selected');
+                    this.querySelector('span').textContent = '+';
+                    this.setAttribute('data-state', 'plus');
+                }
+            });
+        });
+    </script>
+    <script src="/js/customMode.js"></script> <!-- 자바스크립트 파일 연결 -->
+>>>>>>> a81c16390ae0e68723ed6a09705b89e47bed73a3
 
 </body>
 </html>
