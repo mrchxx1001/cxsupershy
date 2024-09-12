@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let backrestAngle = 0;  // 등받이의 초기 각도
 
     // 시트 이동 범위 제한
-    const minSeatPositionX = 50 - 20;  // 시트는 앞으로 20%까지만 이동 가능 (50%에서 30%까지)
-    const maxSeatPositionX = 100;      // 시트는 뒤로 최대 100%까지 이동 가능
+    const minSeatPositionX = seatPositionX - 5;  // 초기 위치에서 앞으로 5%까지
+    const maxSeatPositionX = seatPositionX + 5;  // 초기 위치에서 뒤로 5%까지
 
     // 등받이 각도 제한
-    const minBackrestAngle = -10;    // 등받이 최소 각도 (수직)
-    const maxBackrestAngle = 180;  // 등받이 최대 각도 (완전히 뒤로)
+    const minBackrestAngle = -70;    // 등받이 최소 각도
+    const maxBackrestAngle = 50;  // 등받이 최대 각도
 
 
 

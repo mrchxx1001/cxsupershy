@@ -1,8 +1,26 @@
 let selectedIcon = null; // 선택된 아이콘을 저장할 변수
 
 function selectIcon(iconNumber) {
-    selectedIcon = iconNumber; // 선택한 아이콘 번호 저장
-    console.log("Icon " + selectedIcon + " selected");
+    const selectedElement = document.querySelector(`.icon:nth-child(${iconNumber})`);
+
+    // 이미 선택된 아이콘을 다시 클릭한 경우, 선택 해제
+    if (selectedIcon === iconNumber) {
+        selectedElement.classList.remove("selected");
+        selectedIcon = null; // 선택된 아이콘 정보 해제
+        console.log("Icon " + iconNumber + " deselected");
+    } else {
+        // 기존 선택된 아이콘이 있으면 그 아이콘의 스타일 제거
+        if (selectedIcon !== null) {
+            document.querySelector(".icon.selected").classList.remove("selected");
+        }
+
+        // 새로운 선택된 아이콘에 스타일 적용
+        selectedElement.classList.add("selected");
+
+        // 선택한 아이콘 번호 저장
+        selectedIcon = iconNumber;
+        console.log("Icon " + selectedIcon + " selected");
+    }
 }
 
 function previousPage() {
