@@ -184,13 +184,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-    gap: 70px;
+    gap: 50px;
     margin-left: 200px;
     margin-top: 0px;
 }
 
 .app img{
-    width: 330px;
+    width: 300px;
     height: auto;
 }
 
@@ -324,7 +324,7 @@ body {
 }
 
 .app img:hover {
-    transform: scale(1.0); /* 마우스를 올렸을 때 이미지를 1.1배 확대 */
+    transform: scale(1.1); /* 마우스를 올렸을 때 이미지를 1.1배 확대 */
     opacity: 0.8; /* 마우스를 올렸을 때 이미지의 투명도를 80%로 설정 */
     cursor: pointer; /* 마우스를 올리면 커서가 포인터로 변경 */
 }
