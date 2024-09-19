@@ -1,4 +1,4 @@
- # cxsupershy
+![image](https://github.com/user-attachments/assets/820f5e55-63ce-4bb6-b921-ce8f567908b5) # cxsupershy
 어쩌구 저쩌구
 ## 👨‍🏫 프로젝트 소개
 어쩌구저쩌구
@@ -26,14 +26,14 @@
 - **아이디어 회의** : Slack, Zoom, Notion
 
 ## 🏗️ ERD
-![image](https://github.com/user-attachments/assets/c9ffdf7f-a404-4386-bb67-006a8912021f)
-
+![image](https://github.com/user-attachments/assets/ff766157-00d3-4157-819c-54eff9c8c017)
 
 ## 🌊 프로젝트 전체 플로우
-![image](https://github.com/user-attachments/assets/f75ee308-670d-428a-8e54-efc6e9d8bbdb)
+![image](https://github.com/user-attachments/assets/89b28870-ab0b-4363-b34f-5571744a2bdb)
+
 
 ## 📝 프로젝트 아키텍쳐
-![image](https://github.com/user-attachments/assets/2b9bf332-1152-42eb-a853-54d715f7aea2)
+![image](https://github.com/user-attachments/assets/42bf8014-11c3-402d-ae83-915040c5e832)
 
 
 ## 📌 주요 기능
@@ -65,9 +65,6 @@
   - YOLOv8은 값의 유사도 정도에 따라 적절한 화면 반환
     - 임베딩 값 0.8 이상 (New User) : 회원가입 화면 호출
     - 임베딩 값 0.8 미만 (Existing User) : 대시보드 화면 호출
-  - 전달받은 스프링부
-
-
 
 
 ## 🖥️ 페이지별 기능
