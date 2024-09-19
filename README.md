@@ -85,6 +85,7 @@ LG DX SCHOOL CX 프로젝트에서 사용한 서버 코드입니다. Flask와 Sp
 ![image](https://github.com/user-attachments/assets/b75b2e23-72c4-4f6d-954b-350df1463c9d)
 ![image](https://github.com/user-attachments/assets/b9a85f34-67de-4153-a14f-1f54415b9530)
 - 닉네임 및 아이콘, 관심있는 모드, 시트 높낮이와 온도를 설정하게 되면 프로필 등록이 완료된다.
+- 차량에서 사용자가 조정하는 하드웨어의 상태가 화면에 반영되는 것을 구현하기 위해, 자바 스크립트를 통해 방향키로 시트의 각도와 온습도가 조정되도록 구현했다.
 - 이후 사용자 맞춤 메인 대시보드를 보여준다.
 
 ![image](https://github.com/user-attachments/assets/60bda219-b1ee-4f76-a286-705b9c562efd)
