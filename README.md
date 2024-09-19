@@ -1,16 +1,24 @@
-![image](https://github.com/user-attachments/assets/820f5e55-63ce-4bb6-b921-ce8f567908b5) # cxsupershy
-어쩌구 저쩌구
-## 👨‍🏫 프로젝트 소개
-어쩌구저쩌구
+# cxsupershy
+LG DX SCHOOL CX 프로젝트에서 사용한 서버 코드입니다. Flask와 Spring Boot를 활용하여 "LG Sync Car" 차량용 대시보드의 프로토타입을 구현하였습니다.
 
-## ⏲️ 개발 기간 
-어쩌구 저쩌구
+## 👨‍🏫 프로젝트 소개
+"초개인화된 차량용 멀티프로필"을 주제로 한 차량용 대시보드입니다. 얼굴인식을 통해 사용자를 등록하고 식별하며, 사용자가 설정한 옵션으로 대시보드를 구성하였습니다.
+
+## ⏲️ 프로젝트 기간 
+- 2024.09.05(목) ~ 2024.09.13(금)
+- 기획 발표
+- 기능 요구사항 정의서, 유스케이스 설계서, ERD 설계
+- 와이어 프레임 및 화면 디자인
+- 개발
+- 발표평가
   
 ## 🧑‍🤝‍🧑 개발자 소개 
 - **김서현**
 - **김언지**
 - **엄자연**
 - **황지훈**
+![image](https://github.com/user-attachments/assets/27eeb560-9146-4d07-9cfb-13f118cd3dfb)
+
 
 ## 💻 개발환경
 - **Version** : Java 17
@@ -19,11 +27,11 @@
 - **ORM** : JPA
 
 ## ⚙️ 기술 스택
-- **Server** : AWS EC2
-- **DataBase** : AWS RDS, Datagrip, JPQL, ERD AqueryTool
-- **WS/WAS** : Nginx, Tomcat
-- **OCR** : AWS Textract, AWS S3
-- **아이디어 회의** : Slack, Zoom, Notion
+- **Language** : Python, Java
+- **DataBase** : Oracle
+- **Front-end** : HTML, CSS, JavaScript
+- **Back-end** : Springboot, Flask  
+- **Collaboration** : Notion, Figma, GitHub, Google Drive 
 
 ## 🏗️ ERD
 ![image](https://github.com/user-attachments/assets/ff766157-00d3-4157-819c-54eff9c8c017)
