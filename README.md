@@ -25,24 +25,49 @@
 - **OCR** : AWS Textract, AWS S3
 - **아이디어 회의** : Slack, Zoom, Notion
 
+## 🏗️ ERD
+![image](https://github.com/user-attachments/assets/c9ffdf7f-a404-4386-bb67-006a8912021f)
+
+
 ## 🌊 프로젝트 전체 플로우
+![image](https://github.com/user-attachments/assets/f75ee308-670d-428a-8e54-efc6e9d8bbdb)
 
 ## 📝 프로젝트 아키텍쳐
+![image](https://github.com/user-attachments/assets/2b9bf332-1152-42eb-a853-54d715f7aea2)
 
 
 ## 📌 주요 기능
-- 가전기기 등록
-  - 공공데이터포털에서 제공하는 가전기기의 업체명, 모델명, 소비전력량, 에너지 효율등급, 시간당 이산화탄소 배출량를 csv 파일로 가져온다.
-  - 가격필드를 추가한 후 데이터 크롤링을 이용해 가격 정보를 csv파일에 입력한다.
-  - csv파일을 Json으로 변환하여 DB에 입력한다.
-  - 전기냉장고, 전기냉방기, 김치냉장고, 전기세탁기 품목에 한정하여 진행하였다.
-- 가전기기 검색
-   - 텍스트로 모델명을 검색하면 텍스트와 일치하는 모델에 대한 정보가 사용자에게 반환된다. Like 연산자를 활용하여 모델명이 부분일치하는 경우도 반환할 수 있게 하였다.
-   - 에너지소비효율 등급을 사진으로 찍으면 좌표값을 이용하여 모델명을 추출하여 해당 모델에 대한 정보를 사용자에게 반환한다.
-- 품목 별 랭킹 조회
-    - 기존의 에너지효율 등급과 탄소배출량 등을 고려하여 매긴 자체점수를 이용해 가전제품의 랭킹을 사용자에게 보여준다.
-    - 기존의 에너지효율 등급만으로는 동일한 등급 간의 비교가 어려웠고, 얼마만큼의 이득이 생기는지가 수치적으로 드러나지 않는다는 단점이 존재했다. 이러한 점을 개선하기 위해 자체 점수 제도를 도입하였다.
-    - 또한 등급간의 비율도 가전기기의 종류마다 제각각이었기 때문에 인공지능을 활용해 공평하게 등급을 구분하였다.
+- YOLOv8
+  - 객체탐지(Object Detection) 분야에서 사용되는 딥러닝 모델
+  - 다중 객체 탐지 가능
+    - 이미지 내에서 여러 객체를 동시에 탐지할 수 있으며, 각 객체의 레이블(예:사람, 강아지 등)와 위치(바운딩 박스 좌표)를 반환함
+- Residual Networ(ResNet50)
+  - 딥러닝 분야에서 이미지 분류와 특징 추출에 널리 사용되는 모델
+  - 특징 추출이 가능함
+    - 다양한 이미지에서 유의미한 특징을 추출하는 데 뛰어남
+    - 이미지 분류, 물체 탐지 등의 다양한 비전(vision) 작업에서 활용되며, 추출한 특징을 임베딩 벡터로 반환함
+ - YOLOv8과 ResNet50을 활용한 고객 인식 Service Flow
+  ![image](https://github.com/user-attachments/assets/829cf3b9-bafa-4cec-a7a7-bbc42697a725)
+   - 고객 인식 : YOLOv8을 이용해 카메라에 비춰지는 프레임에서 사람을 인식하고, ResNet50으로 고유한 특징을 추출해 임베딩을 생성함
+   - 고객 확인 : 추출된 임베딩을 저장된 임베딩과 비교하여 유사도를 계산하여 임계값(0.8)보다 높으면, 기존 고객으로 인식하여 로그인 처리, 그렇지 않으면 새로운 고객으로 등록
+- SpringBoot를 활용한 임베딩/로그 데이터 처리
+  ![image](https://github.com/user-attachments/assets/ab37af8e-3f61-4710-972c-df265c114224)
+  ![image](https://github.com/user-attachments/assets/ccf35912-ec9c-43ef-9bc1-5fec21a1cb89)
+  - 카메라 끄기 이벤트가 발생하면 Flask를 통해 임베딩, 로그 데이터 전송
+  - post mapping을 통해 이 값을 받은 뒤 respinsbody.ok 사인 반환
+    - Flask를 통해 Map<String, Object> 형태로 데이터를 전달 받음
+    - embeddings와 logData로 데이터 분할
+      - embeddings : 2차원 배열 형태
+      - logData : 1차원 배열 형태, 다시 map 형태로 전환
+    - logData의 isNewPerson이 true인 경우에만 DB 적재 진행
+      - 기존에 입력 받은 값은 session에 저장했다가 Service에서 Users 클래스로 매핑됨
+      - Users 클래스 형태로 Repository에서 DB에 저장
+  - YOLOv8은 값의 유사도 정도에 따라 적절한 화면 반환
+    - 임베딩 값 0.8 이상 (New User) : 회원가입 화면 호출
+    - 임베딩 값 0.8 미만 (Existing User) : 대시보드 화면 호출
+  - 전달받은 스프링부
+
+
 
 
 ## 🖥️ 페이지별 기능
