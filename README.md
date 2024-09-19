@@ -32,6 +32,8 @@ AWS에서 주관하는 INHA SW NET-Zero 해커톤에서 사용한 서버 코드�
 - **OCR** : AWS Textract, AWS S3
 - **아이디어 회의** : Slack, Zoom, Notion
 
+## 🌊 프로젝트 전체 플로우
+
 ## 📝 프로젝트 아키텍쳐
 
 
