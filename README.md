@@ -11,6 +11,8 @@
 - **김언지**
 - **엄자연**
 - **황지훈**
+![image](https://github.com/user-attachments/assets/44d755a8-a867-43b5-b003-29f2fb27049e)
+
 
 ## 💻 개발환경
 - **Version** : Java 17
